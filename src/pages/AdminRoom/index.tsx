@@ -1,17 +1,18 @@
-import logoImg from "../assets/images/logo.svg";
-import deleteImg from "../assets/images/delete.svg";
-import checkImg from "../assets/images/check.svg";
-import answerImg from "../assets/images/answer.svg";
+import logoImg from "../../assets/images/logo.svg";
+import deleteImg from "../../assets/images/delete.svg";
+import checkImg from "../../assets/images/check.svg";
+import answerImg from "../../assets/images/answer.svg";
 
-import { Button } from "../components/Button";
-import { RoomCode } from "../components/RoomCode";
+import { Button } from "../../components/Button";
+import { RoomCode } from "../../components/RoomCode";
 import { useHistory, useParams } from "react-router-dom";
 
-import "../styles/room.scss";
+// import "../styles/room.scss";
 // import { useAuth } from "../hooks/useAuth";
-import { Question } from "../components/Question";
-import { useRoom } from "../hooks/useRoom";
-import { database } from "../services/firebase";
+import { Question } from "../../components/Question";
+import { useRoom } from "../../hooks/useRoom";
+import { database } from "../../services/firebase";
+import { StyledAdminRoom } from "./styles";
 
 type RoomParams = {
   id: string;
@@ -51,7 +52,7 @@ export function AdminRoom() {
   }
 
   return (
-    <div id="page-room">
+    <StyledAdminRoom>
       <header>
         <div className="content">
           <img src={logoImg} alt="Letmeask" />
@@ -65,11 +66,13 @@ export function AdminRoom() {
       </header>
       <main>
         <div className="room-title">
-          <h1>Sala {title}</h1>
-          {questions.length > 0 && (
+          <h1>Sala: {title}</h1>
+          {questions.length > 0 ? (
             <span>
               {questions.length} pergunta{questions.length > 1 && "s"}
             </span>
+          ) : (
+            <span>Não há perguntas até o momento.</span>
           )}
         </div>
 
@@ -113,6 +116,6 @@ export function AdminRoom() {
           })}
         </div>
       </main>
-    </div>
+    </StyledAdminRoom>
   );
 }

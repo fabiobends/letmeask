@@ -4,10 +4,12 @@ import { NewHome } from "./pages/NewRoom";
 import { AuthContextProvider } from "./contexts/AuthContext";
 import { Room } from "./pages/Room";
 import { AdminRoom } from "./pages/AdminRoom";
+import GlobalStyle from "./styles/global";
 
 function App() {
   return (
     <BrowserRouter>
+      <GlobalStyle />
       <AuthContextProvider>
         <Switch>
           <Route path="/" exact component={Home} />

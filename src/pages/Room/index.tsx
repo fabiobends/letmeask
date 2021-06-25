@@ -1,14 +1,15 @@
-import logoImg from "../assets/images/logo.svg";
-import { Button } from "../components/Button";
-import { RoomCode } from "../components/RoomCode";
+import logoImg from "../../assets/images/logo.svg";
+import { Button } from "../../components/Button";
+import { RoomCode } from "../../components/RoomCode";
 import { useParams } from "react-router-dom";
 import { useState, FormEvent } from "react";
 
-import "../styles/room.scss";
-import { useAuth } from "../hooks/useAuth";
-import { database } from "../services/firebase";
-import { Question } from "../components/Question";
-import { useRoom } from "../hooks/useRoom";
+// import "../styles/room.scss";
+import { useAuth } from "../../hooks/useAuth";
+import { database } from "../../services/firebase";
+import { Question } from "../../components/Question";
+import { useRoom } from "../../hooks/useRoom";
+import { StyledRoom } from "./styles";
 
 type RoomParams = {
   id: string;
@@ -63,7 +64,7 @@ export function Room() {
   }
 
   return (
-    <div id="page-room">
+    <StyledRoom>
       <header>
         <div className="content">
           <img src={logoImg} alt="Letmeask" />
@@ -72,7 +73,7 @@ export function Room() {
       </header>
       <main>
         <div className="room-title">
-          <h1>Sala {title}</h1>
+          <h1>Sala: {title}</h1>
           {questions.length > 0 && (
             <span>
               {questions.length} pergunta{questions.length > 1 && "s"}
@@ -147,6 +148,6 @@ export function Room() {
           })}
         </div>
       </main>
-    </div>
+    </StyledRoom>
   );
 }

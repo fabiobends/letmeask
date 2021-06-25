@@ -1,14 +1,13 @@
-import illustrationImg from "../assets/images/illustration.svg";
-import logoImg from "../assets/images/logo.svg";
+import illustrationImg from "../../assets/images/illustration.svg";
+import logoImg from "../../assets/images/logo.svg";
 import { Link } from "react-router-dom";
-import { Button } from "../components/Button";
+import { Button } from "../../components/Button";
 import { FormEvent, useState } from "react";
-// import { useContext } from "react";
-// import { AuthContext } from "../contexts/AuthContext";
-import "../styles/auth.scss";
-import { database } from "../services/firebase";
-import { useAuth } from "../hooks/useAuth";
+// import "../styles/auth.scss";
+import { database } from "../../services/firebase";
+import { useAuth } from "../../hooks/useAuth";
 import { useHistory } from "react-router-dom";
+import { StyledNewRoom } from "./styles";
 
 export function NewHome() {
   const { user } = useAuth();
@@ -32,7 +31,7 @@ export function NewHome() {
   }
 
   return (
-    <div id="page-auth">
+    <StyledNewRoom>
       <aside>
         <img src={illustrationImg} alt="Perguntas e respostas" />
         <strong>Crie salas de Q&A ao-vivo</strong>
@@ -56,6 +55,6 @@ export function NewHome() {
           </p>
         </div>
       </main>
-    </div>
+    </StyledNewRoom>
   );
 }
