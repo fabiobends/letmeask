@@ -39,6 +39,7 @@ export const StyledRoom = styled.div`
       }
 
       span {
+        text-align: center;
         margin-left: 16px;
         background: #e559f9;
         border-radius: 100px;
@@ -104,6 +105,34 @@ export const StyledRoom = styled.div`
 
     .question-list {
       margin-top: 32px;
+    }
+  }
+
+  @media (max-width: 750px) {
+    main {
+      max-width: 85vw;
+
+      .room-title {
+        flex-direction: column;
+
+        span {
+          margin-top: 0.5em;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 620px) {
+    header {
+      .content {
+        flex-direction: column;
+
+        > div {
+          margin-top: 1em;
+          flex-direction: column;
+          align-items: center;
+        }
+      }
     }
   }
 `;

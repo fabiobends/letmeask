@@ -6,7 +6,7 @@ export const StyledButton = styled.div`
     font-weight: 500;
     background: #835afd;
     color: #fff;
-    padding: 1em 2em;
+    padding: 0.75em 2em;
     display: flex;
     align-items: center;
     justify-content: center;

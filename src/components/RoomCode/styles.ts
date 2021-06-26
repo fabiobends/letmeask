@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const StyledRoomCode = styled.div`
   .room-code {
-    height: 2.5em;
+    height: 2.8em;
     border-radius: 0.5em;
     overflow: hidden;
     background: #fff;
